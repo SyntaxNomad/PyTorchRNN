@@ -1,40 +1,36 @@
- IMDB Sentiment Analysis with PyTorch RNN
+# IMDB Sentiment Analysis - RNN in PyTorch
 
-This is a project where I built a sentiment analysis model for IMDB movie reviews using an RNN in PyTorch. The model predicts whether a review is positive or negative, and it gets around 84% accuracy on the test set.
+This is a sentiment analysis project trained on IMDB movie reviews. It uses a word-level RNN built with PyTorch to classify each review as either positive or negative.
 
-  Background
+Originally, I built an RNN from scratch using NumPy to get a deeper understanding of how things work under the hood. That version reached about 51% accuracy. After switching to PyTorch and implementing an LSTM-based architecture, I hit around 84% accuracy.
 
-Before using PyTorch, I actually built a basic RNN from scratch with just NumPy. That version taught me a lot — even though it only got ~51% accuracy. After that, I recreated the logic in PyTorch to make it more scalable, cleaner, and efficient.
+This was part of my learning journey in NLP and PyTorch — and it gave me a much stronger grasp of embeddings, LSTMs, and training pipelines.
 
-  What This Does
-	•	Loads IMDB movie reviews
-	•	Preprocesses the data:
-	•	Tokenization
-	•	Padding
-	•	Builds vocabulary (top 5000 words)
-	•	Uses a custom PyTorch RNN with LSTM + Embedding
-	•	Trains using BCEWithLogitsLoss and Adam optimizer
-	•	Outputs sentiment predictions (positive / negative)
+---
 
-  Accuracy
-	•	PyTorch model: ~84% accuracy
-	•	From-scratch NumPy model: ~51% 
+## Highlights
 
-  Why I Did This
+- Word-level tokenization and vocabulary limited to top 5000 words
+- Embedding layer + LSTM built with PyTorch
+- Binary classification using BCEWithLogitsLoss
+- Optimized using Adam
+- Clean, padded input sequences and manual batching
 
-I wanted to:
-	•	Learn RNNs properly, not just use them
-	•	Practice PyTorch by implementing everything manually
-	•	Understand how embeddings, padding, and vocab all connect
-	•	See the improvement from scratch code to framework usage
+---
 
-  Tools Used
-	•	Python
-	•	PyTorch
-	•	NumPy (for scratch version)
-	•	IMDB Dataset
-	•	Matplotlib (for some optional plots)
+## Accuracy
 
-  Should You Try This?
+| Model           | Accuracy |
+|------------------|----------|
+| NumPy RNN (scratch) | ~51%     |
+| PyTorch LSTM        | ~84%     |
 
-If you’re learning PyTorch, RNNs, or NLP — this is a good place to start. It walks through all the steps clearly, and comparing both versions gives you insight into what PyTorch automates under the hood.
+---
+
+## Run it yourself
+
+```bash
+git clone https://github.com/SyntaxNomad/PyTorchRNN
+cd PyTorchRNN
+pip install -r requirements.txt
+python main.py
