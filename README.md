@@ -1,3 +1,4 @@
+# Author : Mohamed Elfaki
 # IMDB Sentiment Analysis - RNN in PyTorch
 
 This is a sentiment analysis project trained on IMDB movie reviews. It uses a word-level RNN built with PyTorch to classify each review as either positive or negative.
@@ -34,3 +35,4 @@ git clone https://github.com/SyntaxNomad/PyTorchRNN
 cd PyTorchRNN
 pip install -r requirements.txt
 python main.py
+
